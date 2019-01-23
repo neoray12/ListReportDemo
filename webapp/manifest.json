@@ -1,0 +1,150 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "listreportdemo.listreportdemo",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"tags": {
+			"keywords": []
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/oData_test/oData_test.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml",
+					"annotations": [
+						"annotation0"
+					]
+				}
+			},
+			"annotation0": {
+				"type": "ODataAnnotation",
+				"uri": "annotation0.xml",
+				"settings": {
+					"localUri": "annotation0.xml"
+				}
+			}
+		},
+		"offline": false,
+		"sourceTemplate": {
+			"id": "ui5template.smartTemplate",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"resources": {
+			"js": [],
+			"css": []
+		},
+		"dependencies": {
+			"minUI5Version": "1.32.1",
+			"libs": {},
+			"components": {}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ListReport|SensorData2": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ListReport/SensorData2/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|SensorData2": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/SensorData2/i18n.properties"
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": false
+				}
+			}
+		},
+		"extends": {
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ui.generic.app": {
+		"_version": "1.3.0",
+		"settings": {
+			"flexibleColumnLayout": {
+				"defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+				"defaultThreeColumnLayoutType": "ThreeColumnsEndExpanded"
+			}
+		},
+		"pages": {
+			"ListReport|SO_Header": {
+				"entitySet": "SO_Header",
+				"component": {
+					"name": "sap.suite.ui.generic.template.ListReport",
+					"list": false,
+					"settings": {
+						"smartVariantManagement": false,
+						"quickVariantSelectionX": {
+							"showCounts": true,
+							"variants": {
+							"1": {
+                                "key": "1",
+                                "entitySet": "SO_Header",
+                                "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#salesorder"
+                            },
+                            "2": {
+                                "key": "2",
+                                "entitySet": "WorkOrder",
+                                "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#workorder"
+                            },
+                            "3": {
+                                "key": "3",
+                                "entitySet": "SensorData2",
+                                "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#chart"
+                            }
+						}
+						}
+						}
+			
+					}
+				}
+			}
+		},
+	"sap.platform.hcp": {
+		"uri": ""
+	}
+}
